@@ -1,3 +1,4 @@
+tool
 extends "res://addons/hyperlog/trackers/tracker.gd"
 
 var min_value := 0.0

@@ -1,3 +1,4 @@
+tool
 extends "res://addons/hyperlog/trackers/tracker.gd"
 
 var values := []

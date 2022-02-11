@@ -1,3 +1,4 @@
+tool
 extends PanelContainer
 
 var parent_node
