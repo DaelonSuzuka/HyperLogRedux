@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://addons/hyperlog/log_container.gd" type="Script" id=1]
+[ext_resource path="res://addons/hyperlog/fonts/code_font.tres" type="DynamicFont" id=2]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -25,6 +26,7 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="Theme" id=4]
+default_font = ExtResource( 2 )
 PanelContainer/styles/panel = SubResource( 3 )
 
 [node name="log_container" type="PanelContainer"]
