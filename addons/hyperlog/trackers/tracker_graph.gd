@@ -1,5 +1,4 @@
-extends Tracker
-class_name TrackerGraph
+extends "res://addons/hyperlog/trackers/tracker.gd"
 
 var min_value := 0.0
 var max_value := 0.1
@@ -95,23 +94,23 @@ func _graph_segment(from, to, pos, color_index):
 func _range_value(value)->float:
 	return (1 - ( (value - min_value) / (max_value - min_value) ) ) * (rect_min_size.y - 2) + 1
 
-func set_range_min(value:float)->Tracker:
+func set_range_min(value:float):
 	force_min_value = value
 	min_value = value
 	return self
 
-func set_range_max(value:float)->Tracker:
+func set_range_max(value:float):
 	force_max_value = value
 	max_value = value
 	return self
 
-func set_range(value_min:float, value_max:float)->Tracker:
+func set_range(value_min:float, value_max:float):
 	force_min_value = value_min
 	min_value = value_min
 	force_max_value = value_max
 	max_value = value_max
 	return self
 
-func set_steps(value:int)->TrackerGraph:
+func set_steps(value:int):
 	step_size = value
 	return self

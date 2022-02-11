@@ -1,5 +1,4 @@
-extends Tracker
-class_name TrackerText
+extends "res://addons/hyperlog/trackers/tracker.gd"
 
 onready var name_container = $name_container
 onready var value_container = $value_container
@@ -20,7 +19,7 @@ func _process(delta):
 		else:
 			label_value.modulate = Color.white
 
-func add_tracker(property:String, node:Node = null)->ValueTracker:
+func add_tracker(property:String, node:Node = null):
 	_add_label(name_container)
 	_add_label(value_container)
 	return .add_tracker(property, node)

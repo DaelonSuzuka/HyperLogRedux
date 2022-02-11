@@ -1,5 +1,4 @@
 extends Resource
-class_name ValueTracker
 
 var node:Node
 var property := ""

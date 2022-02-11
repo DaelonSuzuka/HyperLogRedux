@@ -1,5 +1,4 @@
-extends Tracker
-class_name TrackerColor
+extends "res://addons/hyperlog/trackers/tracker.gd"
 
 onready var label = $Label
 

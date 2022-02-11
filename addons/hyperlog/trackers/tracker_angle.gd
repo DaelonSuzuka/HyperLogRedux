@@ -1,5 +1,4 @@
-extends Tracker
-class_name TrackerAngle
+extends "res://addons/hyperlog/trackers/tracker.gd"
 
 var values := []
 
@@ -10,7 +9,7 @@ var steps := 20
 func _init():
 	set_height(80)
 
-func add_tracker(property:String = "rotation", object:Node = null)->ValueTracker:
+func add_tracker(property:String = "rotation", object:Node = null):
 	return .add_tracker(property, object)
 
 func _physics_process(delta):
@@ -90,7 +89,7 @@ func angle_towards(from:float, to:float, delta:float):
 	return from + sign(angle_difference(from, to)) * delta
 
 
-func set_height(value:float)->Tracker:
+func set_height(value:float):
 	rect_min_size.x = value
 	return .set_height(value)
 

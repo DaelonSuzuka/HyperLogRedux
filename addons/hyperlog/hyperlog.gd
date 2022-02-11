@@ -1,6 +1,6 @@
 extends Node
 
-var main_log:LogContainer
+var main_log
 
 var colors := []
 
@@ -21,7 +21,7 @@ func _ready():
 		colors.push_back(color)
 
 onready var container_ref = preload("res://addons/hyperlog/log_container.tscn")
-func log(node:Node, print1 = null, print2 = null, print3 = null, print4 = null)->LogContainer:
+func log(node:Node, print1 = null, print2 = null, print3 = null, print4 = null):
 	var container = get_container(node)
 	if print1 != null:
 		container.print(print1, print2, print3, print4)
@@ -63,35 +63,35 @@ func print(arg1, arg2 = null, arg3 = null, arg4 = null):
 	main_log.print(arg1, arg2, arg3, arg4)
 
 # LOG
-func add_text()->TrackerText:
+func add_text():
 	main_log.show()
 	return main_log.add_text()
 
-func text(properties, node = null)->TrackerText:
+func text(properties, node = null):
 	main_log.show()
 	return main_log.text(properties, node)
 
-func add_angle()->TrackerAngle:
+func add_angle():
 	main_log.show()
 	return main_log.add_angle()
 
-func angle(properties = "rotation", node = null)->TrackerAngle:
+func angle(properties = "rotation", node = null):
 	main_log.s1ow()
 	return main_log.angle(properties, node)
 
-func add_graph()->TrackerGraph:
+func add_graph():
 	main_log.show()
 	return main_log.add_graph()
 
-func graph(properties, node = null, range_min = null, range_max = null)->TrackerGraph:
+func graph(properties, node = null, range_min = null, range_max = null):
 	main_log.show()
 	return main_log.graph(properties, node, range_min, range_max)
 
-func add_color()->TrackerColor:
+func add_color():
 	main_log.show()
 	return main_log.add_color()
 
-func color(properties = "modulate", node = null)->TrackerColor:
+func color(properties = "modulate", node = null):
 	main_log.show()
 	return main_log.color(properties, node)
 

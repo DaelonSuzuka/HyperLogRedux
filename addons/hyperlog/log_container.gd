@@ -1,5 +1,4 @@
 extends PanelContainer
-class_name LogContainer
 
 var parent_node
 
@@ -31,7 +30,7 @@ func _set_name(value):
 	name_label.visible = true
 	name_label.text = value
 
-#func set_size(value:float = 1)->LogContainer:
+#func set_size(value:float = 1):
 #	rect_scale = Vector2.ONE * value
 #	return self
 
@@ -92,7 +91,7 @@ func add_graph():
 	var tracker = _create_tracker(ref_graph)
 	return tracker
 
-func graph(properties, node = null, range_min = null, range_max = null)->TrackerGraph:
+func graph(properties, node = null, range_min = null, range_max = null):
 	var tracker = add_graph()
 	if range_min != null:
 		tracker.set_range_min(range_min)
@@ -107,7 +106,7 @@ func add_bar():
 	var tracker = _create_tracker(ref_bar)
 	return tracker
 
-func bar(properties, range_min:float = 0, range_max:float = 10, node = null)->TrackerGraph:
+func bar(properties, range_min:float = 0, range_max:float = 10, node = null):
 	var tracker = add_bar()
 	tracker.set_range(range_min, range_max)
 	tracker.track(properties, node)
@@ -131,15 +130,15 @@ func _create_tracker(ref):
 	
 	return tracker
 
-func set_width(value)->LogContainer:
+func set_width(value):
 	rect_size.x = value
 	return self
 
-func offset(value:Vector2)->LogContainer:
+func offset(value:Vector2):
 	_offset = value
 	return self
 
-func align(horizontal = HALIGN_LEFT, vertical = VALIGN_TOP)->LogContainer:
+func align(horizontal = HALIGN_LEFT, vertical = VALIGN_TOP):
 	align_horizontal = horizontal
 	align_vertical = vertical
 	return self
@@ -147,18 +146,18 @@ func align(horizontal = HALIGN_LEFT, vertical = VALIGN_TOP)->LogContainer:
 func remove():
 	HyperLog.remove_log(parent_node)
 
-#func show()->LogContainer:
+#func show():
 #	visible = true
 #	return self
 #
-#func hide()->LogContainer:
+#func hide():
 #	visible = false
 #	return self
 
-func hide_name()->LogContainer:
+func hide_name():
 	name_label.visible = false
 	return self
 
-func show_name()->LogContainer:
+func show_name():
 	name_label.visible = true
 	return self

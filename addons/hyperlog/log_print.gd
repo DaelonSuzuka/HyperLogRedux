@@ -1,4 +1,4 @@
-extends Tracker
+extends "res://addons/hyperlog/trackers/tracker.gd"
 
 onready var label = $Label
 

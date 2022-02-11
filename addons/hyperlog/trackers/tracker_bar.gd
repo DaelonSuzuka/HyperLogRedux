@@ -1,5 +1,4 @@
-extends Tracker
-class_name TrackerBar
+extends "res://addons/hyperlog/trackers/tracker.gd"
 
 var range_min := 0
 var range_max := 10
@@ -16,7 +15,7 @@ func _process(delta):
 		var bar = bars[i]
 		bar.value = value
 
-func add_tracker(property:String, node:Node)->ValueTracker:
+func add_tracker(property:String, node:Node):
 	var tracker = .add_tracker(property, node)
 	var label = Label.new()
 	add_child(label)
@@ -32,7 +31,7 @@ func add_tracker(property:String, node:Node)->ValueTracker:
 	bars.push_back(bar)
 	return tracker
 
-func set_range(value_min, value_max)->TrackerBar:
+func set_range(value_min, value_max):
 	range_min = value_min
 	range_max = value_max
 	
@@ -41,12 +40,12 @@ func set_range(value_min, value_max)->TrackerBar:
 		bar.max_value = range_max
 	return self
 
-func hide_labels()->TrackerBar:
+func hide_labels():
 	for label in labels:
 		label.visible = false
 	return self
 
-func show_labels()->TrackerBar:
+func show_labels():
 	for label in labels:
 		label.visible = true
 	return self
